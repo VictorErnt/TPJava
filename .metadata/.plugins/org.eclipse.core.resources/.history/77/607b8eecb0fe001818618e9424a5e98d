@@ -1,0 +1,46 @@
+import java.util.ArrayList;
+
+public class Etudiant {
+	private String Nom;
+	private String Prenom;
+	private String Email;
+	private String niveauEtude;
+	//private ArrayList<ArrayList<Integer>> Notes;
+	private ArrayList<Integer> notesModule;
+	
+	/////////////////Constructor
+	public Etudiant(String Nom,String Prenom,String Email,String niveauEtude) {
+		this.Nom=Nom;
+		this.Prenom=Prenom;
+		this.Email=Email;
+		this.niveauEtude=niveauEtude;
+		//Notes= new ArrayList<ArrayList<Integer>>();
+		notesModule= new ArrayList<Integer>();
+	}
+	
+	/////////////Methods
+	public double moyenneEleve() {
+		double total=0;
+		int note;
+		for (int i=0;i<notesModule.size();i++) {
+			note=notesModule.get(i);
+		    total += note;
+		}
+		double moyenne = total / notesModule.size();
+
+		return moyenne;
+	}
+	
+	///////////////////////// Method Get
+	public String getNomEtudiant(){
+		return Nom;
+	}
+	/*
+	public ArrayList<ArrayList<Integer>> getNotes(){
+		return Notes;
+	}
+	*/
+	
+	
+	
+}
